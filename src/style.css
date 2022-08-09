@@ -6,6 +6,16 @@
 
 body {
   display: flex;
+  flex-direction: row;
+}
+
+#boardOne {
+  display: flex;
+  flex-direction: column;
+}
+
+#boardTwo {
+  display: flex;
   flex-direction: column;
 }
 

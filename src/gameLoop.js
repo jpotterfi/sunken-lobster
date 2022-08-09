@@ -1,6 +1,17 @@
 import { displayBoard } from "./displayBoard";
+import { gameboardFactory } from "./gameboardFactory";
+import { player } from "./player";
 
 function gameLoop() {
-  displayBoard();
+  let playerBoard = gameboardFactory();
+  playerBoard.placeShip(0, 0, 5, "destroyer");
+  playerBoard.placeShip(2, 0, 3, "submarine");
+
+  let computerBoard = gameboardFactory();
+  computerBoard.placeShip(5, 3, 5, "destroyer");
+  computerBoard.placeShip(3, 5, 3, "submarine");
+
+  displayBoard(playerBoard, computerBoard);
+  for (let i = 0; i < 5; i++) {}
 }
 export { gameLoop };
