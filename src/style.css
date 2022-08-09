@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  border: 1px black solid;
+  width: 25px;
+  height: 25px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+}
