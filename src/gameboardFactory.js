@@ -15,7 +15,8 @@ function gameboardFactory() {
   ];
 
   function placeShip(row, column, length, name) {
-    let ship = shipFactory(length, name);
+    let orientation = "horizontal";
+    let ship = shipFactory(length, name, orientation, row, column);
     //assuming horizontal placement
     for (let i = 0; i < length; i++) {
       coordinates[row][column + i] = ship;
@@ -24,15 +25,29 @@ function gameboardFactory() {
 
   function receiveAttack(row, column) {
     if (typeof coordinates[row][column] === "object") {
-      coordinates[row][column].hit;
-      return true;
+      coordinates[row][column].hit([row, column]);
+      return coordinates[row][column].isSunk();
     } else {
       coordinates[row][column] = "miss";
       return false;
     }
   }
 
-  return { coordinates, placeShip, receiveAttack };
+  function isOver() {
+    let isOver = true;
+    for (let row = 0; row < 10; row++) {
+      for (let column = 0; column < 10; column++) {
+        if (typeof coordinates[row][column] === "object") {
+          if (coordinates[row][column].isSunk() == false) {
+            isOver = false;
+          }
+        }
+      }
+    }
+    return isOver;
+  }
+
+  return { coordinates, placeShip, receiveAttack, isOver };
 }
 export { gameboardFactory };
 
