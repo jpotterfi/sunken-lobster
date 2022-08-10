@@ -6,6 +6,9 @@ function gameLoop() {
   let playerBoard = gameboardFactory();
   playerBoard.placeShip(0, 0, 5, "destroyer");
   playerBoard.placeShip(2, 0, 3, "submarine");
+  playerBoard.receiveAttack(0, 0);
+  playerBoard.receiveAttack(0, 1);
+  playerBoard.receiveAttack(0, 6);
 
   let computerBoard = gameboardFactory();
   computerBoard.placeShip(5, 3, 5, "destroyer");

@@ -23,15 +23,25 @@ function displayBoard(player, computer) {
       for (let j = 0; j < 10; j++) {
         if (typeof playerBoard.coordinates[i][j] === "object") {
           if (playerBoard.coordinates[i][j].name == "destroyer") {
-            console.log(playerBoard.coordinates[i][j].shipLocation);
             let destroyer = document.getElementById("playerbox" + i + "" + j);
             destroyer.style.backgroundColor = "blue";
             destroyer.innerText = "d";
+            if (
+              playerBoard.coordinates[i][j].shipLocation[
+                JSON.stringify([i, j])
+              ] == true
+            ) {
+              console.log("found a hit location at" + i + "" + j);
+              destroyer.style.backgroundColor = "red";
+            }
           } else if (playerBoard.coordinates[i][j].name == "submarine") {
             let submarine = document.getElementById("playerbox" + i + "" + j);
             submarine.style.backgroundColor = "green";
             submarine.innerText = "s";
           }
+        } else if (playerBoard.coordinates[i][j] == "miss") {
+          let miss = document.getElementById("playerbox" + i + "" + j);
+          miss.innerText = "x";
         }
       }
     }
