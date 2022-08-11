@@ -27,9 +27,9 @@ computerBoard.placeShip(0, 0, 5, "battleship");
 computerBoard.placeShip(2, 0, 5, "battleship");
 computerBoard.placeShip(4, 0, 5, "battleship");
 computerBoard.placeShip(6, 0, 5, "battleship");
-placeCarrier(computerBoard);
+computerBoard = placeCarrier(computerBoard);
 
-console.table(computerBoard.coordinates);
+// console.table(computerBoard.coordinates);
 
 // gameLoop();
 // let board = gameboardFactory();
