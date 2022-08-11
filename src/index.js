@@ -23,11 +23,19 @@ let arr = [
 //second parameter is the index (of the value) within the index (of the array)
 
 let computerBoard = gameboardFactory();
-computerBoard.placeShip(0, 0, 5, "battleship");
-computerBoard.placeShip(2, 0, 5, "battleship");
-computerBoard.placeShip(4, 0, 5, "battleship");
-computerBoard.placeShip(6, 0, 5, "battleship");
-computerBoard = placeCarrier(computerBoard);
+placeCarrier(computerBoard);
+placeCarrier(computerBoard);
+placeCarrier(computerBoard);
+console.table(computerBoard.coordinates);
+// computerBoard.placeShip(0, 0, 5, "battleship");
+// computerBoard.placeShip(2, 0, 5, "battleship");
+// computerBoard.placeShip(4, 0, 5, "battleship");
+// computerBoard.placeShip(6, 0, 5, "battleship");
+
+// placeCarrier(computerBoard);
+// placeCarrier(computerBoard);
+// placeCarrier(computerBoard);
+// placeCarrier(computerBoard);
 
 // console.table(computerBoard.coordinates);
 

@@ -14,12 +14,19 @@ function gameboardFactory() {
     ["J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10"],
   ];
 
-  function placeShip(row, column, length, name) {
-    let orientation = "horizontal";
+  function placeShip(row, column, length, name, orientation) {
     let ship = shipFactory(length, name, orientation, row, column);
-    //assuming horizontal placement
-    for (let i = 0; i < length; i++) {
-      coordinates[row][column + i] = ship;
+
+    if (orientation == 0) {
+      //horizontal placement
+      for (let i = 0; i < length; i++) {
+        coordinates[row][column + i] = ship;
+      }
+    } else if (orientation == 1) {
+      //vertical placement
+      for (let i = 0; i < length; i++) {
+        coordinates[row + i][column] = ship;
+      }
     }
   }
 

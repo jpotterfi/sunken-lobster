@@ -1,11 +1,11 @@
 function shipFactory(length, name, orientation, row, column) {
   let shipLocation = {};
 
-  if (orientation == "horizontal") {
+  if (orientation == 0) {
     for (let i = 0; i < length; i++) {
       shipLocation[JSON.stringify([row, column + i])] = false;
     }
-  } else if (orientation == "vertical") {
+  } else if (orientation == 1) {
     for (let i = 0; i < length; i++) {
       shipLocation[JSON.stringify([row + i, column])] = false;
     }
