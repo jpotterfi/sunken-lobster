@@ -10,12 +10,17 @@ import { player } from "./player";
 
 function gameLoop() {
   let playerBoard = gameboardFactory();
+  let computerBoard = gameboardFactory();
+
+  // while (playerBoard.isOver() == false && computerBoard.isOver == false) {
+  //   //play game
+  // }
   placeCarrier(playerBoard);
   placeBattleship(playerBoard);
   placeDestroyer(playerBoard);
   placeSubmarine(playerBoard);
   placePatrolboat(playerBoard);
-  let computerBoard = gameboardFactory();
+
   computerPlaceShips(computerBoard);
   console.table(playerBoard.coordinates);
   console.table(computerBoard.coordinates);
