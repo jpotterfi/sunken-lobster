@@ -7,6 +7,7 @@ import { gameboardFactory } from "./gameboardFactory";
 import { gameLoop } from "./gameLoop";
 import { shipFactory } from "./shipFactory";
 import "./style.css";
+import { randomAttack } from "./computerFns/randomAttack";
 
 let arr = [
   ["A1", "A2", "A3"],
@@ -26,7 +27,13 @@ let arr = [
 //first parameter is the index (of the array) within coordinate array
 //second parameter is the index (of the value) within the index (of the array)
 
-gameLoop();
+// gameLoop();
+let board = gameboardFactory();
+
+for (let i = 0; i < 10; i++) {
+  randomAttack(board);
+}
+console.table(board.coordinates);
 
 // placeCarrier(computerBoard);
 // placeCarrier(computerBoard);
