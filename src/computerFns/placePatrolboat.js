@@ -1,7 +1,7 @@
 import { gameboardFactory } from "../gameboardFactory";
 
-function placeCarrier(board) {
-  let length = 5;
+function placePatrolboat(board) {
+  let length = 2;
   let isFound = false;
   let row = Math.floor(Math.random() * 10);
   let column = Math.floor(Math.random() * 10);
@@ -15,7 +15,7 @@ function placeCarrier(board) {
 
     //horizontal
     if (orientation == 0) {
-      column = Math.floor(Math.random() * 6);
+      column = Math.floor(Math.random() * 9);
       for (let i = 0; i < length; i++) {
         if (typeof board.coordinates[row][column + i] === "object") {
           isFound = false;
@@ -79,7 +79,7 @@ function placeCarrier(board) {
           if (typeof board.coordinates[row][column - 1] === "object") {
             isFound = false;
           }
-        } else if (column >= 2 && column < length) {
+        } else if (column >= 2 && column < 8) {
           if (typeof board.coordinates[row][column + 1 + i] === "object") {
             isFound = false;
           }
@@ -89,7 +89,7 @@ function placeCarrier(board) {
           if (typeof board.coordinates[row][column - 2] === "object") {
             isFound = false;
           }
-        } else if (column == length) {
+        } else if (column == 8) {
           if (typeof board.coordinates[row][column + i] === "object") {
             isFound = false;
           }
@@ -103,7 +103,7 @@ function placeCarrier(board) {
       }
     }
     if (orientation == 1) {
-      row = Math.floor(Math.random() * 6);
+      row = Math.floor(Math.random() * 9);
       column = Math.floor(Math.random() * 10);
       for (let i = 0; i < length; i++) {
         if (typeof board.coordinates[row + i][column] === "object") {
@@ -168,7 +168,7 @@ function placeCarrier(board) {
           if (typeof board.coordinates[row - 1][column] === "object") {
             isFound = false;
           }
-        } else if (row >= 2 && row < length) {
+        } else if (row >= 2 && row < 8) {
           if (typeof board.coordinates[row + i + 1][column] === "object") {
             isFound = false;
           }
@@ -178,7 +178,7 @@ function placeCarrier(board) {
           if (typeof board.coordinates[row - 2][column] === "object") {
             isFound = false;
           }
-        } else if (row == length) {
+        } else if (row == 8) {
           if (typeof board.coordinates[row + i][column] === "object") {
             isFound = false;
           }
@@ -192,7 +192,7 @@ function placeCarrier(board) {
       }
     }
   }
-  console.log(row, column, orientation, "carrier");
-  board.placeShip(row, column, length, "carrier", orientation);
+  console.log(row, column, orientation, "patrolboat");
+  board.placeShip(row, column, length, "patrolboat", orientation);
 }
-export { placeCarrier };
+export { placePatrolboat };

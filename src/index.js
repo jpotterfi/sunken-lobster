@@ -1,4 +1,8 @@
+import { placeBattleship } from "./computerFns/placeBattleship";
 import { placeCarrier } from "./computerFns/placeCarrier";
+import { placeDestroyer } from "./computerFns/placeDestroyer";
+import { placePatrolboat } from "./computerFns/placePatrolboat";
+import { placeSubmarine } from "./computerFns/placeSubmarine";
 import { gameboardFactory } from "./gameboardFactory";
 import { gameLoop } from "./gameLoop";
 import { shipFactory } from "./shipFactory";
@@ -22,22 +26,12 @@ let arr = [
 //first parameter is the index (of the array) within coordinate array
 //second parameter is the index (of the value) within the index (of the array)
 
-let computerBoard = gameboardFactory();
-placeCarrier(computerBoard);
-placeCarrier(computerBoard);
-placeCarrier(computerBoard);
-console.table(computerBoard.coordinates);
-// computerBoard.placeShip(0, 0, 5, "battleship");
-// computerBoard.placeShip(2, 0, 5, "battleship");
-// computerBoard.placeShip(4, 0, 5, "battleship");
-// computerBoard.placeShip(6, 0, 5, "battleship");
+gameLoop();
 
 // placeCarrier(computerBoard);
 // placeCarrier(computerBoard);
 // placeCarrier(computerBoard);
 // placeCarrier(computerBoard);
-
-// console.table(computerBoard.coordinates);
 
 // gameLoop();
 // let board = gameboardFactory();
