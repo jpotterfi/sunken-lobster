@@ -27,13 +27,13 @@ let arr = [
 //first parameter is the index (of the array) within coordinate array
 //second parameter is the index (of the value) within the index (of the array)
 
-// gameLoop();
-let board = gameboardFactory();
+gameLoop();
+// let board = gameboardFactory();
 
-for (let i = 0; i < 10; i++) {
-  randomAttack(board);
-}
-console.table(board.coordinates);
+// for (let i = 0; i < 10; i++) {
+//   randomAttack(board);
+// }
+// console.table(board.coordinates);
 
 // placeCarrier(computerBoard);
 // placeCarrier(computerBoard);

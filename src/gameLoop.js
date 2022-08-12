@@ -4,6 +4,7 @@ import { placeCarrier } from "./computerFns/placeCarrier";
 import { placeDestroyer } from "./computerFns/placeDestroyer";
 import { placePatrolboat } from "./computerFns/placePatrolboat";
 import { placeSubmarine } from "./computerFns/placeSubmarine";
+import { randomAttack } from "./computerFns/randomAttack";
 import { displayBoard } from "./displayBoard";
 import { gameboardFactory } from "./gameboardFactory";
 import { player } from "./player";
@@ -11,17 +12,17 @@ import { player } from "./player";
 function gameLoop() {
   let playerBoard = gameboardFactory();
   let computerBoard = gameboardFactory();
+  computerPlaceShips(playerBoard);
+  computerPlaceShips(computerBoard);
 
   // while (playerBoard.isOver() == false && computerBoard.isOver == false) {
   //   //play game
   // }
-  placeCarrier(playerBoard);
-  placeBattleship(playerBoard);
-  placeDestroyer(playerBoard);
-  placeSubmarine(playerBoard);
-  placePatrolboat(playerBoard);
+  // for (let i = 0; i < 25; i++) {
+  //   randomAttack(playerBoard);
+  // }
 
-  computerPlaceShips(computerBoard);
+  displayBoard(playerBoard, computerBoard);
   console.table(playerBoard.coordinates);
   console.table(computerBoard.coordinates);
 }
