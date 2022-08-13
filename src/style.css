@@ -30,3 +30,15 @@ body {
   flex-direction: row;
   width: 300px;
 }
+
+#place_carrier {
+  width: 125px;
+  height: 25px;
+  background-color: grey;
+  border: 1px solid black;
+  cursor: move;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}

@@ -9,10 +9,19 @@ import { shipFactory } from "./shipFactory";
 import "./style.css";
 import { randomAttack } from "./computerFns/randomAttack";
 
-let arr = [
-  ["A1", "A2", "A3"],
-  ["B1", "B2", "B3"],
-];
+let isSettingUp = true;
+
+const draggables = document.querySelectorAll(".draggable");
+
+draggables.forEach((draggable) => {
+  draggable.addEventListener("dragstart", () => {
+    console.log("drag start");
+    draggable.classList.add("dragging");
+  });
+  draggable.addEventListener("dragend", () => {
+    draggable.classList.remove("dragging");
+  });
+});
 //first value is the row, second value is the column
 
 // let gameboard = gameboardFactory();

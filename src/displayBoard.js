@@ -3,9 +3,11 @@ import { gameboardFactory } from "./gameboardFactory";
 import { getDifficulty } from "./gameDifficulty";
 
 function displayBoard(player, computer) {
+  let isSettingUp = true;
   createPlayerBoard();
   updatePlayerBoard(player);
   createComputerBoard();
+
   function createPlayerBoard() {
     let board = document.getElementById("boardOne");
     for (let i = 0; i < 10; i++) {
@@ -16,7 +18,9 @@ function displayBoard(player, computer) {
         let box = document.createElement("div");
         box.id = "playerbox" + i + "" + j;
         box.className = "box";
-
+        box.addEventListener("dragover", function () {
+          console.log(box.id + " is being dragged over");
+        });
         row.appendChild(box);
       }
       board.appendChild(row);

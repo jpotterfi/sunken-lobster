@@ -12,7 +12,7 @@ import { player } from "./player";
 function gameLoop() {
   let playerBoard = gameboardFactory();
   let computerBoard = gameboardFactory();
-  computerPlaceShips(playerBoard);
+  // computerPlaceShips(playerBoard);
   computerPlaceShips(computerBoard);
 
   // while (playerBoard.isOver() == false && computerBoard.isOver == false) {
